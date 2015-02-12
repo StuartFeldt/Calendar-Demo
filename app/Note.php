@@ -6,7 +6,7 @@ class Note {
 	private $noteDate;
 	private $noteText;
 
-	function __construct($noteText = "", $noteDate = "") {
+	function __construct($noteText = "", $noteDate = "", $f3) {
 		$this->noteDb = NoteDB::getNoteDB($f3);
 		$this->setNoteText($noteText);
 		$this->setNoteDate($noteDate);

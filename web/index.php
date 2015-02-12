@@ -22,7 +22,7 @@ $f3->route('GET /',
  */
 $f3->route('POST /note/create',
     function($f3) {
-        $note = new Note($f3->get('POST.noteText'), $f3->get('POST.noteDate'));
+        $note = new Note($f3->get('POST.noteText'), $f3->get('POST.noteDate'), $f3);
         $note->save();
         echo "Saved";
     }
