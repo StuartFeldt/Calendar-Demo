@@ -2,6 +2,7 @@
 
 $f3 = require('../lib/base.php');
 $f3->set('AUTOLOAD','../app/');
+$f3->config('../config.ini');
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -32,7 +33,7 @@ $f3->route('POST /note/create',
  */
 $f3->route('POST /notes/@noteDate',
     function($f3) {
-        print json_encode(NoteDB::getDB()->exec("select * from notes where noteDate='".$f3->get('PARAMS.noteDate')."'"));
+        print json_encode(NoteDB::getDB($f3)->exec("select * from notes where noteDate='".$f3->get('PARAMS.noteDate')."'"));
     }
 );
 
@@ -41,7 +42,7 @@ $f3->route('POST /notes/@noteDate',
  */
 $f3->route('POST /note/delete',
     function($f3) {
-        $noteDb = NoteDB::getNoteDB();
+        $noteDb = NoteDB::getNoteDB($f3);
         $noteDb->load(array("noteID=?", intval($f3->get('POST.noteId'))));
         $noteDb->erase();
     }
