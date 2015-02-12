@@ -17,6 +17,10 @@ $(function() {
     $("#date").html(curDate);
     getNotes(curDate);
 
+    $('#note-text').on("input", function(){
+    	var charLeft = 140 - $('#note-text').val().length;
+		$('#count').text(charLeft);
+    });
 });
 
 $("#create-note").click(function(){
@@ -35,7 +39,6 @@ function getNotes(date) {
 	var url = "/notes/" + date;
 
 	$.post(url, function(data) {
-		console.log(data);
 		$.each(JSON.parse(data), function(k,v) {
 			var lastNote = $("#notes-list").append("<p class='well'>" + v.noteText + 
 							"<a href='javascript:removeNote(" + v.noteID + ")'><span class='pull-right glyphicon glyphicon-remove-circle' aria-hidden='true'></span></a></p>").hide().fadeIn();
