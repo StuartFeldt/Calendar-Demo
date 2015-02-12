@@ -41,7 +41,7 @@ function getNotes(date) {
 	$.post(url, function(data) {
 		$.each(JSON.parse(data), function(k,v) {
 			var lastNote = $("#notes-list").append("<p class='well'>" + v.noteText + 
-							"<a href='javascript:removeNote(" + v.noteID + ")'><span class='pull-right glyphicon glyphicon-remove-circle delete-icon' aria-hidden='true'></span></a></p>").hide().fadeIn();
+							"<a href='javascript:removeNote(" + v.noteID + ")'><span class='pull-right glyphicon glyphicon glyphicon-trash delete-icon' aria-hidden='true'></span></a></p>").hide().fadeIn();
 		});
 	});
 }
