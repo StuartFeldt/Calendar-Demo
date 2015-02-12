@@ -13,6 +13,7 @@ $(function() {
       	}
     });
 
+    curDate = $('#datepicker').datepicker({"dateFormat": "yy-mm-dd"}).val();
     $("#date").html(curDate);
     getNotes(curDate);
 
