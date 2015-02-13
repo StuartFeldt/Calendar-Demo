@@ -38,6 +38,15 @@ $f3->route('POST /notes/@noteDate',
 );
 
 /*
+ *  Get all noteDates
+ */
+$f3->route('POST /notes/dates',
+    function($f3) {
+        print json_encode(NoteDB::getDB($f3)->exec("select noteDate from notes"));
+    }
+);
+
+/*
  *  Delete Note Endpoint
  */
 $f3->route('POST /note/delete',

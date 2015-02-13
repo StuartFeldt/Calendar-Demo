@@ -8,3 +8,5 @@ body {
 div.ui-datepicker{font-size:22px;}
 #note-controls{margin-top:6px;}
 .delete-icon {color: #a33;font-size:1.2em;}
+
+.ui-datepicker .highlight-date a { background: #0074d9; color:#efefef;}
