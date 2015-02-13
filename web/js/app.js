@@ -48,7 +48,7 @@ $(function() {
 	// set char countdown box
     $('#note-text').on("input", function(){
     	var charLeft = 140 - $('#note-text').val().length;
-		$('#count').text(charLeft);
+		$('#count').text(charLeft + " characters left");
     });
 });
 
@@ -64,8 +64,9 @@ $("#create-note").click(function(){
 	// post to create endpoint
 	$.post("/note/create", postData, function(data) {
 
-		// reset text box
-		$('#note-text').text("");
+		// reset text box & char counter
+		$('#note-text').val("");
+		$('#count').text("140 characters left");
 
 		// reset notes for selected day
 		getNotes(curDate);
