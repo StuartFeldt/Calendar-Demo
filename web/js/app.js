@@ -43,6 +43,10 @@ $(function() {
 	    $("#date").html(curDate);
 	    getNotes(curDate);
 
+	    if($(window).width() < 500) {
+	    	$('div.ui-datepicker').css("font-size", "16px");
+	    };
+
 	});
 
 	// set char countdown box

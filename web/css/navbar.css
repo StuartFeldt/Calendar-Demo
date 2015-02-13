@@ -4,8 +4,13 @@ body {
   background-image: url('/img/grey.png');
 }
 
+
 .navbar {margin-bottom: 20px;}
-div.ui-datepicker{font-size:22px;}
+div.ui-datepicker{
+	font-size:22px;
+	margin-left:auto;
+	margin-right:auto;
+}
 #note-controls{margin-top:6px;}
 .delete-icon {color: #a33;font-size:1.2em;}
 
